@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Nithiiin/nithinbalaji.github.io/main/building_inventory%20(1).csv",
+    "format": {"type": "csv"}
+  },
+  "vconcat": [
+    {
+      "title": {"text": "Number of Buildings by Agency Name"},
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Agency Name",
+          "type": "nominal",
+          "axis": {
+            "title": "Agency Name",
+            "labelFontSize": 10,
+            "titleFontSize": 10
+          }
+        },
+        "y": {
+          "aggregate": "count",
+          "type": "quantitative",
+          "axis": {
+            "title": "Number of Buildings",
+            "labelFontSize": 10,
+            "titleFontSize": 10
+          }
+        },
+        "tooltip": [
+          {"field": "Agency Name", "type": "nominal"},
+          {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Number of Buildings"
+          }
+        ]
+      },
+      "width": 1000,
+      "height": 400
+    },
+    {
+      "title": {
+        "text": "Square Footage vs. Year Acquired",
+        "anchor": "start",
+        "offset": 50,
+        "dx": 470
+      },
+      "mark": {"type": "point", "size": 20},
+      "transform": [{"filter": "datum['Year Acquired'] > 100"}],
+      "encoding": {
+        "x": {
+          "field": "Year Acquired",
+          "type": "quantitative",
+          "axis": {
+            "title": "Year Acquired",
+            "labelFontSize": 10,
+            "titleFontSize": 15
+          },
+          "scale": {"domain": [1740, 2020]}
+        },
+        "y": {
+          "field": "Square Footage",
+          "type": "quantitative",
+          "axis": {
+            "title": "Square Footage",
+            "labelFontSize": 10,
+            "titleFontSize": 15
+          }
+        },
+        "tooltip": [
+          {"field": "Year Acquired", "type": "quantitative"},
+          {"field": "Square Footage", "type": "quantitative"}
+        ]
+      },
+      "width": 1300,
+      "height": 500
+    }
+  ],
+  "config": {}
+}
