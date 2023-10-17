@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://raw.githubusercontent.com/Nithiiin/nithinbalaji.github.io/main/building_inventory%20(1).csv",
+    "url": "https://raw.githubusercontent.com/Nithiiin/nithinbalaji.github.io/main/building_inventory.csv",
     "format": {"type": "csv"}
   },
   "vconcat": [
